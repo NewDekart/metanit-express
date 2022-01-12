@@ -2,19 +2,14 @@ const express = require("express");
 
 const app = express();
 
-app.get("/bo?k", (request, response) => {
+app.use("/home/bar", (request, response) => {
 
-    response.send(request.url)
+    response.redirect("/about");
 })
 
-app.get("/bo+k", (request, response) => {
+app.use("/about", (request, response) => {
 
-    response.send(request.url)
-})
-
-app.get("/bo*k", (request, response) => {
-
-    response.send(request.url)
+    response.send("<h2>О сайте</h2>");
 })
 
 app.listen(3000);
