@@ -2,14 +2,17 @@ const express = require("express");
 
 const app = express();
 
-app.use("/home/bar", (request, response) => {
+app.get("/", (request, response) => {
 
-    response.redirect("/about");
+    response.response("<h2>Главная страница</h2>");
 })
 
 app.use("/about", (request, response) => {
 
-    response.send("<h2>О сайте</h2>");
+    const id = request.query.id;
+    const name = request.query.name;
+
+    response.send({id, name})
 })
 
 app.listen(3000);
