@@ -1,0 +1,23 @@
+{
+  "name": "metanit-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NewDekart/metanit-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NewDekart/metanit-express/issues"
+  },
+  "homepage": "https://github.com/NewDekart/metanit-express#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
