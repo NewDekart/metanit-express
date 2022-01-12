@@ -1,24 +1,15 @@
 const express = require("express");
-const path = require("path");
 
 const app = express();
 
-// создаем парсер для данных application/x-www-form-urlencoded
-const urlencodedParser = express.urlencoded({extended: false});
+app.get("/products/:model/versions/:versionNumber", (request, response) => {
 
-app.get("/", (request, response) => {
-
-    response.sendFile(path.resolve(__dirname, "index.html"))
+    response.send(`Модель: ${request.params["model"]}, Версия: ${request.params["versionNumber"]}`)
 })
 
-app.post("/", urlencodedParser, (request, response) => {
+app.get("/products/:productId", (request, response) => {
 
-    if (!request.body) {
-
-        return response.sendStatus(400)
-    }
-
-    response.send(request.body)
+    response.send(`Id продукта: ${request.params["productId"]}`)
 })
 
 app.listen(3000);
