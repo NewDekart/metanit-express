@@ -3,9 +3,11 @@ const path = require("path");
 
 const app = express();
 
-app.use("/home/bar/foo", (request, response) => {
+app.use("/static", express.static(path.resolve(__dirname, "public")));
 
-    response.status(404).send("Nothing to do here!")
-});
+app.get("/", (request, response) => {
+
+    response.send("<h1>Главная</h1>")
+})
 
 app.listen(3000);
